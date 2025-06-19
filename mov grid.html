@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Movie Info Layout</title>
+  <style>
+    body {
+      font-family: Verdana, sans-serif;
+      background-color: whitesmoke;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .movie-container {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .movie-block {
+      display: flex;
+      border: 3px solid gray;
+      border-radius: 12px;
+      overflow: hidden;
+      width: 80%;
+      height: 360px;
+      background-color: white;
+      box-shadow: 0 4px 12px black;
+    }
+
+    .movie-left {
+      width: 35%;
+      background-color: #1e1e2f;
+      color: white;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .info-box {
+      border: 2px solid gray;
+      border-radius: 8px;
+      padding: 10px;
+      background-color: #2e2e40;
+      box-shadow: 0 2px 5px whitesmoke;
+    }
+
+    .info-box p {
+      margin: 0;
+      font-weight: bold;
+    }
+
+    .movie-right {
+      width: 65%;
+      background-color: whitesmoke;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 15px;
+    }
+
+    .img-box,
+    .desc-box {
+      border: 2px solid gray;
+      border-radius: 8px;
+      background-color: white;
+      box-shadow: 0 2px 6px black;
+      width: 100%;
+      padding: 10px;
+    }
+
+    .movie-right img {
+      width: 160px;
+      height: 200px;
+      border-radius: 8px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .desc {
+      font-size: 15px;
+      text-align: justify;
+      color: black;
+      max-height: 80px;
+      overflow-y: auto;
+      position: sticky;
+      top: 0;
+      padding-right: 5px;
+    }
+
+    .chatbot-box {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: grey;
+      color: black;
+      padding: 12px 16px;
+      border-radius: 12px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Movie Showcase</h2>
+
+  <div class="movie-container">
+
+    <div class="movie-block">
+      <div class="movie-left">
+        <div class="info-box"><p> Movie: Moana 2</p></div>
+        <div class="info-box"><p> Character: Moana</p></div>
+        <div class="info-box"><p> Director: David G. Derrick Jr.</p></div>
+        <div class="info-box"><p> Net Worth: $690M</p></div>
+      </div>
+      <div class="movie-right">
+        <div class="img-box">
+          <img src="mov1.jpg" alt="Moana 2">
+        </div>
+        <div class="desc-box">
+          <div class="desc">
+            Moana sets out once again on a thrilling voyage, crossing uncharted oceans to unite distant Polynesian islands. She battles fierce waves and magical storms and learns ancient myths passed down by her ancestors. Along the way, she is challenged by mysterious elemental beings who test her leadership, resolve, and courage. As she seeks her place in the world, Moana uncovers truths about heritage, community, and harmony with nature. Her connection with the sea deepens, and her bond with her people strengthens. With stunning visuals and powerful songs, Moana 2 delivers a bold message of hope and destiny.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="movie-block">
+      <div class="movie-left">
+        <div class="info-box"><p> Movie: Zootopia 2</p></div>
+        <div class="info-box"><p> Character: Judy Hopps</p></div>
+        <div class="info-box"><p> Director: Jared Bush</p></div>
+        <div class="info-box"><p> Net Worth: $1.02B</p></div>
+      </div>
+      <div class="movie-right">
+        <div class="img-box">
+          <img src="mov2.jpg" alt="Zootopia 2">
+        </div>
+        <div class="desc-box">
+          <div class="desc">
+            In Zootopia 2, Judy Hopps and Nick Wilde return to solve a mysterious crisis involving predator disappearances. As they investigate, they uncover growing unrest and fear spreading across species. Their journey leads them into the darkest corners of the city, where secrets challenge their beliefs and friendships. With new allies and old enemies, they race against time to prevent chaos. The film explores themes of justice, equality, and coexistence in a rapidly evolving society. Full of humor, heart, and suspense, Zootopia 2 expands its world with vibrant characters and a thrilling narrative that reflects real-world issues.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="movie-block">
+      <div class="movie-left">
+        <div class="info-box"><p> Movie: Jumanji</p></div>
+        <div class="info-box"><p> Character: Dr. Bravestone</p></div>
+        <div class="info-box"><p> Director: Jake Kasdan</p></div>
+        <div class="info-box"><p> Net Worth: $962M</p></div>
+      </div>
+      <div class="movie-right">
+        <div class="img-box">
+          <img src="mov3.webp" alt="Jumanji">
+        </div>
+        <div class="desc-box">
+          <div class="desc">
+            In Jumanji, four high school students are transported into a mysterious video game and transformed into adult avatars. To escape, they must work together, face treacherous terrain, wild beasts, and cryptic puzzles. Each player must overcome their fears, embrace their strengths, and trust one another to survive the game. Set in a vibrant jungle world, the film is packed with action, comedy, and heartwarming moments. As the players grow closer, they discover personal truths and the value of teamwork. Jumanji is a thrilling and imaginative adventure that celebrates friendship, courage, and the unexpected power within each of us.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="movie-block">
+      <div class="movie-left">
+        <div class="info-box"><p> Movie: Soul</p></div>
+        <div class="info-box"><p> Character: Joe Gardner</p></div>
+        <div class="info-box"><p> Director: Pete Docter</p></div>
+        <div class="info-box"><p> Net Worth: $121M</p></div>
+      </div>
+      <div class="movie-right">
+        <div class="img-box">
+          <img src="mov4.avif" alt="Soul">
+        </div>
+        <div class="desc-box">
+          <div class="desc">
+            Soul follows Joe Gardner, a middle-school music teacher whose big break as a jazz musician is halted by a sudden accident. Transported to a metaphysical realm called "The Great Before," he meets a soul named 22 and learns profound lessons about life's purpose. Joe tries to return to his body, but his journey transforms how he views passion, success, and existence itself. With stunning animation, touching music, and deep emotional themes, Soul inspires viewers to appreciate the small, beautiful moments in everyday life. It encourages reflection on meaning, fulfillment, and the art of truly living.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="movie-block">
+      <div class="movie-left">
+        <div class="info-box"><p> Movie: Harold and the Purple Crayon</p></div>
+        <div class="info-box"><p> Character: Harold</p></div>
+        <div class="info-box"><p> Director: Carlos Saldanha</p></div>
+        <div class="info-box"><p> Net Worth: $90M</p></div>
+      </div>
+      <div class="movie-right">
+        <div class="img-box">
+          <img src="mov5.jpg" alt="Harold and the Purple Crayon">
+        </div>
+        <div class="desc-box">
+          <div class="desc">
+            Harold and the Purple Crayon tells the story of a young boy who uses a magical crayon to draw his own world. When his drawings come to life, Harold embarks on an imaginative adventure where the only limit is his creativity. Along the way, he encounters both fun and challenges, discovering lessons about responsibility and self-belief. Each drawing opens a new door, teaching him to face fear and trust his instincts. The movie combines whimsy with life lessons, celebrating childhood wonder and imagination. It's a colorful journey through the boundless potential of creativity and the magic of believing in yourself.
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="chatbot-box">
+    💬 Hi, how can I help you?
+  </div>
+
+</body>
+</html>
