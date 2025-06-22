@@ -1,6 +1,9 @@
 function AfterLogin(){
-    return(
-        <h1>Welcome to the Pages</h1>
+    return (
+        <div style={{ textAlign: "center", marginTop: "30px" }}>
+      <h2>Welcome to my pages</h2>
+    </div>
     )
 }
-export default AfterLogin;
+
+export default AfterLogin;

@@ -64,7 +64,7 @@ function App() {
   );
 }
 
-export default App;*/
+export default App;
 
 import Pages from "./component/Pages.jsx"
 import Login from "./component/Login.jsx";
@@ -73,4 +73,37 @@ function App(){
   let login =false;
   return login ? <Login/> : <AfterLogin/>
 }
+export default App;
+
+import { useState } from "react";
+import Pages from "./component/Pages.jsx";
+import AfterLogin from "./component/AfterLogin.jsx";
+
+function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  return isLoggedIn ? <AfterLogin /> : <Pages onLogin={() => setIsLoggedIn(true)} />;
+}
+
+export default App;*/
+import { useState } from "react";
+import Pages from "./component/Pages";
+import Login from "./component/Login";
+import AfterLogin from "./component/AfterLogin";
+
+function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  return (
+    <>
+      <Pages />
+      {isLoggedIn ? (
+        <AfterLogin />
+      ) : (
+        <Login onLoginSuccess={() => setIsLoggedIn(true)} />
+      )}
+    </>
+  );
+}
+
 export default App;
