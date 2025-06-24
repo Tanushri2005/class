@@ -1,0 +1,903 @@
+use KEC
+switched to db KEC
+db.createCollection("User")
+{ ok: 1 }
+db.User.insertOne({
+Name: "Tanushri",
+email: "tanushriv.23eie@kongu.edu",
+age: "20",
+department: "EIE"})
+{
+  acknowledged: true,
+  insertedId: ObjectId('685a25e94a57826d0fc9e508')
+}
+db.User.insertOne({
+name: "Tanu",
+email: "tanushri@gmail.com",
+age" "21",
+department: "EIE"})
+SyntaxError: Unexpected token, expected "," (4:3)
+
+[0m [90m 2 |[39m name[33m:[39m [32m"Tanu"[39m[33m,[39m
+ [90m 3 |[39m email[33m:[39m [32m"tanushri@gmail.com"[39m[33m,[39m
+[31m[1m>[22m[39m[90m 4 |[39m age[32m" "[39m[35m21[39m[32m",[39m
+ [90m   |[39m    [31m[1m^[22m[39m
+ [90m 5 |[39m department[33m:[39m [32m"EIE"[39m})[0m
+db.User.insertMany({
+name: "Tanu",
+email: "tanushri@gmail.com",
+age" "21",
+department: "EIE"})
+SyntaxError: Unexpected token, expected "," (4:3)
+
+[0m [90m 2 |[39m name[33m:[39m [32m"Tanu"[39m[33m,[39m
+ [90m 3 |[39m email[33m:[39m [32m"tanushri@gmail.com"[39m[33m,[39m
+[31m[1m>[22m[39m[90m 4 |[39m age[32m" "[39m[35m21[39m[32m",[39m
+ [90m   |[39m    [31m[1m^[22m[39m
+ [90m 5 |[39m department[33m:[39m [32m"EIE"[39m})[0m
+db.User.insertMany([{
+name: "Tanu",
+email: "tanushri@gmail.com",
+age" "21",
+department: "EIE"}])
+SyntaxError: Unexpected token, expected "," (4:3)
+
+[0m [90m 2 |[39m name[33m:[39m [32m"Tanu"[39m[33m,[39m
+ [90m 3 |[39m email[33m:[39m [32m"tanushri@gmail.com"[39m[33m,[39m
+[31m[1m>[22m[39m[90m 4 |[39m age[32m" "[39m[35m21[39m[32m",[39m
+ [90m   |[39m    [31m[1m^[22m[39m
+ [90m 5 |[39m department[33m:[39m [32m"EIE"[39m}])[0m
+db.User.insertMany([{
+name: "Tanu",
+email: "tanushri@gmail.com",
+age: "21",
+department: "EIE"}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('685a2bdf4a57826d0fc9e509')
+  }
+}
+db.User.insertMany([{
+name: "Shri",
+email: "shri@gmail.com",
+age: "21",
+gender: "Female",
+department: "EIE"}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('685a2c3b4a57826d0fc9e50a')
+  }
+}
+db.User.insertMany([{
+name: "tanu",
+email: "shritanu@gmail.com",
+age: "19",
+gender: "Female",
+department: "EIE"}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('685a2c6d4a57826d0fc9e50b')
+  }
+}
+db.User.insertMany([{
+name: "shritanu",
+email: "shritanu07@gmail.com",
+age: "19",
+gender: "Female",
+department: "EIE"}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('685a2ce54a57826d0fc9e50c')
+  }
+}
+db.user.find()
+db.User.find()
+{
+  _id: ObjectId('685a25e94a57826d0fc9e508'),
+  Name: 'Tanushri',
+  email: 'tanushriv.23eie@kongu.edu',
+  age: '20',
+  department: 'EIE'
+}
+{
+  _id: ObjectId('685a2bdf4a57826d0fc9e509'),
+  name: 'Tanu',
+  email: 'tanushri@gmail.com',
+  age: '21',
+  department: 'EIE'
+}
+{
+  _id: ObjectId('685a2c3b4a57826d0fc9e50a'),
+  name: 'Shri',
+  email: 'shri@gmail.com',
+  age: '21',
+  gender: 'Female',
+  department: 'EIE'
+}
+{
+  _id: ObjectId('685a2c6d4a57826d0fc9e50b'),
+  name: 'tanu',
+  email: 'shritanu@gmail.com',
+  age: '19',
+  gender: 'Female',
+  department: 'EIE'
+}
+{
+  _id: ObjectId('685a2ce54a57826d0fc9e50c'),
+  name: 'shritanu',
+  email: 'shritanu07@gmail.com',
+  age: '19',
+  gender: 'Female',
+  department: 'EIE'
+}
+dv.User.findOne()
+ReferenceError: dv is not defined
+db.User.findOne()
+{
+  _id: ObjectId('685a25e94a57826d0fc9e508'),
+  Name: 'Tanushri',
+  email: 'tanushriv.23eie@kongu.edu',
+  age: '20',
+  department: 'EIE'
+}
+db.User.findMany()
+TypeError: db.User.findMany is not a function
+db.User.find({name: "tanu"})
+{
+  _id: ObjectId('685a2c6d4a57826d0fc9e50b'),
+  name: 'tanu',
+  email: 'shritanu@gmail.com',
+  age: '19',
+  gender: 'Female',
+  department: 'EIE'
+}
+db.User.find({age: "19"})
+{
+  _id: ObjectId('685a2c6d4a57826d0fc9e50b'),
+  name: 'tanu',
+  email: 'shritanu@gmail.com',
+  age: '19',
+  gender: 'Female',
+  department: 'EIE'
+}
+{
+  _id: ObjectId('685a2ce54a57826d0fc9e50c'),
+  name: 'shritanu',
+  email: 'shritanu07@gmail.com',
+  age: '19',
+  gender: 'Female',
+  department: 'EIE'
+}
+db.User.findOne({age: "19"})
+{
+  _id: ObjectId('685a2c6d4a57826d0fc9e50b'),
+  name: 'tanu',
+  email: 'shritanu@gmail.com',
+  age: '19',
+  gender: 'Female',
+  department: 'EIE'
+}
+db.User.updateOne({name: "shritanu"},{name: "TANUSHRI"})
+MongoInvalidArgumentError: Update document requires atomic operators
+db.User.updateOne({name: "shritanu"},{$set:{name: "TANUSHRI"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.User.findOne({age: "19"})
+{
+  _id: ObjectId('685a2c6d4a57826d0fc9e50b'),
+  name: 'tanu',
+  email: 'shritanu@gmail.com',
+  age: '19',
+  gender: 'Female',
+  department: 'EIE'
+}
+db.User.find({age: "19"})
+{
+  _id: ObjectId('685a2c6d4a57826d0fc9e50b'),
+  name: 'tanu',
+  email: 'shritanu@gmail.com',
+  age: '19',
+  gender: 'Female',
+  department: 'EIE'
+}
+{
+  _id: ObjectId('685a2ce54a57826d0fc9e50c'),
+  name: 'TANUSHRI',
+  email: 'shritanu07@gmail.com',
+  age: '19',
+  gender: 'Female',
+  department: 'EIE'
+}
+db.User.updateOne({email: "tanushriv.23eie@kongu.edu"},{$set:{email: "tanushri6115@gmail.com"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.User.find({age: "20"})
+{
+  _id: ObjectId('685a25e94a57826d0fc9e508'),
+  Name: 'Tanushri',
+  email: 'tanushri6115@gmail.com',
+  age: '20',
+  department: 'EIE'
+}
+db.User.update({department: "EIE"},{$set:{department: "Electronics and Instrumentation"}})
+DeprecationWarning: Collection.update() is deprecated. Use updateOne, updateMany, or bulkWrite.
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.User.find({age: "20"})
+{
+  _id: ObjectId('685a25e94a57826d0fc9e508'),
+  Name: 'Tanushri',
+  email: 'tanushri6115@gmail.com',
+  age: '20',
+  department: 'Electronics and Instrumentation'
+}
+
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.User.find({age: "19"})
+SyntaxError: Missing semicolon. (4:12)
+
+[0m [90m 2 |[39m {
+ [90m 3 |[39m   acknowledged[33m:[39m [36mtrue[39m[33m,[39m
+[31m[1m>[22m[39m[90m 4 |[39m   insertedId[33m:[39m [36mnull[39m[33m,[39m
+ [90m   |[39m             [31m[1m^[22m[39m
+ [90m 5 |[39m   matchedCount[33m:[39m [35m1[39m[33m,[39m
+ [90m 6 |[39m   modifiedCount[33m:[39m [35m1[39m[33m,[39m
+ [90m 7 |[39m   upsertedCount[33m:[39m [35m0[39m[0m
+db.User.find({age: "20"})
+{
+  _id: ObjectId('685a25e94a57826d0fc9e508'),
+  Name: 'Tanushri',
+  email: 'tanushri6115@gmail.com',
+  age: '20',
+  department: 'Electronics and Instrumentation'
+}
+db.User.find({email: "shri@gmail.com"})
+{
+  _id: ObjectId('685a2c3b4a57826d0fc9e50a'),
+  name: 'Shri',
+  email: 'shri@gmail.com',
+  age: '21',
+  gender: 'Female',
+  department: 'EIE'
+}
+db.User.updateMany({department: "EIE"},{$set:{department: "Electronics and Instrumentation"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 4,
+  modifiedCount: 4,
+  upsertedCount: 0
+}
+db.User.find({email: "shri@gmail.com"})
+{
+  _id: ObjectId('685a2c3b4a57826d0fc9e50a'),
+  name: 'Shri',
+  email: 'shri@gmail.com',
+  age: '21',
+  gender: 'Female',
+  department: 'Electronics and Instrumentation'
+}
+db.User.find()
+{
+  _id: ObjectId('685a25e94a57826d0fc9e508'),
+  Name: 'Tanushri',
+  email: 'tanushri6115@gmail.com',
+  age: '20',
+  department: 'Electronics and Instrumentation'
+}
+{
+  _id: ObjectId('685a2bdf4a57826d0fc9e509'),
+  name: 'Tanu',
+  email: 'tanushri@gmail.com',
+  age: '21',
+  department: 'Electronics and Instrumentation'
+}
+{
+  _id: ObjectId('685a2c3b4a57826d0fc9e50a'),
+  name: 'Shri',
+  email: 'shri@gmail.com',
+  age: '21',
+  gender: 'Female',
+  department: 'Electronics and Instrumentation'
+}
+{
+  _id: ObjectId('685a2c6d4a57826d0fc9e50b'),
+  name: 'tanu',
+  email: 'shritanu@gmail.com',
+  age: '19',
+  gender: 'Female',
+  department: 'Electronics and Instrumentation'
+}
+{
+  _id: ObjectId('685a2ce54a57826d0fc9e50c'),
+  name: 'TANUSHRI',
+  email: 'shritanu07@gmail.com',
+  age: '19',
+  gender: 'Female',
+  department: 'Electronics and Instrumentation'
+}
+db.User.deleteOne({gender: "Female"})
+{
+  acknowledged: true,
+  deletedCount: 1
+}
+db.User.deleteMany({gender: "Female"})
+{
+  acknowledged: true,
+  deletedCount: 2
+}
+db.User.find()
+{
+  _id: ObjectId('685a25e94a57826d0fc9e508'),
+  Name: 'Tanushri',
+  email: 'tanushri6115@gmail.com',
+  age: '20',
+  department: 'Electronics and Instrumentation'
+}
+{
+  _id: ObjectId('685a2bdf4a57826d0fc9e509'),
+  name: 'Tanu',
+  email: 'tanushri@gmail.com',
+  age: '21',
+  department: 'Electronics and Instrumentation'
+}
+db.User.updateMany({},{$set{contact: ""}})
+SyntaxError: Unexpected token, expected "," (1:27)
+
+[0m[31m[1m>[22m[39m[90m 1 |[39m db[33m.[39m[33mUser[39m[33m.[39mupdateMany({}[33m,[39m{$set{contact[33m:[39m [32m""[39m}})
+ [90m   |[39m                            [31m[1m^[22m[39m[0m
+db.User.updateMany({},{$set:{contact: ""}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 2,
+  modifiedCount: 2,
+  upsertedCount: 0
+}
+db.User.find()
+{
+  _id: ObjectId('685a25e94a57826d0fc9e508'),
+  Name: 'Tanushri',
+  email: 'tanushri6115@gmail.com',
+  age: '20',
+  department: 'Electronics and Instrumentation',
+  contact: ''
+}
+{
+  _id: ObjectId('685a2bdf4a57826d0fc9e509'),
+  name: 'Tanu',
+  email: 'tanushri@gmail.com',
+  age: '21',
+  department: 'Electronics and Instrumentation',
+  contact: ''
+}
+db.User.updateMany({},{$set:{contact: "+91-__________"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 2,
+  modifiedCount: 2,
+  upsertedCount: 0
+}
+db.User.find()
+{
+  _id: ObjectId('685a25e94a57826d0fc9e508'),
+  Name: 'Tanushri',
+  email: 'tanushri6115@gmail.com',
+  age: '20',
+  department: 'Electronics and Instrumentation',
+  contact: '+91-__________'
+}
+{
+  _id: ObjectId('685a2bdf4a57826d0fc9e509'),
+  name: 'Tanu',
+  email: 'tanushri@gmail.com',
+  age: '21',
+  department: 'Electronics and Instrumentation',
+  contact: '+91-__________'
+}
+db.User.updateMany({},$set:{gender: "Female"})
+SyntaxError: Unexpected token, expected "," (1:26)
+
+[0m[31m[1m>[22m[39m[90m 1 |[39m db[33m.[39m[33mUser[39m[33m.[39mupdateMany({}[33m,[39m$set[33m:[39m{gender[33m:[39m [32m"Female"[39m})
+ [90m   |[39m                           [31m[1m^[22m[39m[0m
+db.User.updateMany({},{$set:{gender: "Female"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 2,
+  modifiedCount: 2,
+  upsertedCount: 0
+}
+db.User.find()
+{
+  _id: ObjectId('685a25e94a57826d0fc9e508'),
+  Name: 'Tanushri',
+  email: 'tanushri6115@gmail.com',
+  age: '20',
+  department: 'Electronics and Instrumentation',
+  contact: '+91-__________',
+  gender: 'Female'
+}
+{
+  _id: ObjectId('685a2bdf4a57826d0fc9e509'),
+  name: 'Tanu',
+  email: 'tanushri@gmail.com',
+  age: '21',
+  department: 'Electronics and Instrumentation',
+  contact: '+91-__________',
+  gender: 'Female'
+}
+db.User.insertMany([{
+name: "TANUSHRI",
+email: "tanushri123@gmail.com",
+age: "22",
+department: 'Electronics and Instrumentation',
+contact: '+91-__________',
+gender: 'Female'}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('685a3f854a57826d0fc9e50d')
+  }
+}
+db.User.insertMany([{
+name: "TANU",
+email: "tanushriv23@gmail.com",
+age: "22",
+department: 'Electronics and Instrumentation',
+contact: '+91-__________',
+gender: 'Female'}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('685a3fd64a57826d0fc9e50e')
+  }
+}
+db.User.find()
+{
+  _id: ObjectId('685a25e94a57826d0fc9e508'),
+  Name: 'Tanushri',
+  email: 'tanushri6115@gmail.com',
+  age: '20',
+  department: 'Electronics and Instrumentation',
+  contact: '+91-__________',
+  gender: 'Female'
+}
+{
+  _id: ObjectId('685a2bdf4a57826d0fc9e509'),
+  name: 'Tanu',
+  email: 'tanushri@gmail.com',
+  age: '21',
+  department: 'Electronics and Instrumentation',
+  contact: '+91-__________',
+  gender: 'Female'
+}
+{
+  _id: ObjectId('685a3f854a57826d0fc9e50d'),
+  name: 'TANUSHRI',
+  email: 'tanushri123@gmail.com',
+  age: '22',
+  department: 'Electronics and Instrumentation',
+  contact: '+91-__________',
+  gender: 'Female'
+}
+{
+  _id: ObjectId('685a3fd64a57826d0fc9e50e'),
+  name: 'TANU',
+  email: 'tanushriv23@gmail.com',
+  age: '22',
+  department: 'Electronics and Instrumentation',
+  contact: '+91-__________',
+  gender: 'Female'
+}
+db.User.find().sort({age:-1})
+{
+  _id: ObjectId('685a3f854a57826d0fc9e50d'),
+  name: 'TANUSHRI',
+  email: 'tanushri123@gmail.com',
+  age: '22',
+  department: 'Electronics and Instrumentation',
+  contact: '+91-__________',
+  gender: 'Female'
+}
+{
+  _id: ObjectId('685a3fd64a57826d0fc9e50e'),
+  name: 'TANU',
+  email: 'tanushriv23@gmail.com',
+  age: '22',
+  department: 'Electronics and Instrumentation',
+  contact: '+91-__________',
+  gender: 'Female'
+}
+{
+  _id: ObjectId('685a2bdf4a57826d0fc9e509'),
+  name: 'Tanu',
+  email: 'tanushri@gmail.com',
+  age: '21',
+  department: 'Electronics and Instrumentation',
+  contact: '+91-__________',
+  gender: 'Female'
+}
+{
+  _id: ObjectId('685a25e94a57826d0fc9e508'),
+  Name: 'Tanushri',
+  email: 'tanushri6115@gmail.com',
+  age: '20',
+  department: 'Electronics and Instrumentation',
+  contact: '+91-__________',
+  gender: 'Female'
+}
+db.User.find().sort({age:1})
+{
+  _id: ObjectId('685a25e94a57826d0fc9e508'),
+  Name: 'Tanushri',
+  email: 'tanushri6115@gmail.com',
+  age: '20',
+  department: 'Electronics and Instrumentation',
+  contact: '+91-__________',
+  gender: 'Female'
+}
+{
+  _id: ObjectId('685a2bdf4a57826d0fc9e509'),
+  name: 'Tanu',
+  email: 'tanushri@gmail.com',
+  age: '21',
+  department: 'Electronics and Instrumentation',
+  contact: '+91-__________',
+  gender: 'Female'
+}
+{
+  _id: ObjectId('685a3f854a57826d0fc9e50d'),
+  name: 'TANUSHRI',
+  email: 'tanushri123@gmail.com',
+  age: '22',
+  department: 'Electronics and Instrumentation',
+  contact: '+91-__________',
+  gender: 'Female'
+}
+{
+  _id: ObjectId('685a3fd64a57826d0fc9e50e'),
+  name: 'TANU',
+  email: 'tanushriv23@gmail.com',
+  age: '22',
+  department: 'Electronics and Instrumentation',
+  contact: '+91-__________',
+  gender: 'Female'
+}
+db.User.insertMany([{
+name: "irhsunat",
+email: "tanushriv12345@gmail.com",
+age: "23",
+department: 'Electronics and Instrumentation',
+contact: '+91-__________',
+gender: 'Female'}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('685a40c74a57826d0fc9e50f')
+  }
+}
+db.User.find()
+{
+  _id: ObjectId('685a25e94a57826d0fc9e508'),
+  Name: 'Tanushri',
+  email: 'tanushri6115@gmail.com',
+  age: '20',
+  department: 'Electronics and Instrumentation',
+  contact: '+91-__________',
+  gender: 'Female'
+}
+{
+  _id: ObjectId('685a2bdf4a57826d0fc9e509'),
+  name: 'Tanu',
+  email: 'tanushri@gmail.com',
+  age: '21',
+  department: 'Electronics and Instrumentation',
+  contact: '+91-__________',
+  gender: 'Female'
+}
+{
+  _id: ObjectId('685a3f854a57826d0fc9e50d'),
+  name: 'TANUSHRI',
+  email: 'tanushri123@gmail.com',
+  age: '22',
+  department: 'Electronics and Instrumentation',
+  contact: '+91-__________',
+  gender: 'Female'
+}
+{
+  _id: ObjectId('685a3fd64a57826d0fc9e50e'),
+  name: 'TANU',
+  email: 'tanushriv23@gmail.com',
+  age: '22',
+  department: 'Electronics and Instrumentation',
+  contact: '+91-__________',
+  gender: 'Female'
+}
+{
+  _id: ObjectId('685a40c74a57826d0fc9e50f'),
+  name: 'irhsunat',
+  email: 'tanushriv12345@gmail.com',
+  age: '23',
+  department: 'Electronics and Instrumentation',
+  contact: '+91-__________',
+  gender: 'Female'
+}
+db.User.find().sort({email: 1})
+{
+  _id: ObjectId('685a3f854a57826d0fc9e50d'),
+  name: 'TANUSHRI',
+  email: 'tanushri123@gmail.com',
+  age: '22',
+  department: 'Electronics and Instrumentation',
+  contact: '+91-__________',
+  gender: 'Female'
+}
+{
+  _id: ObjectId('685a25e94a57826d0fc9e508'),
+  Name: 'Tanushri',
+  email: 'tanushri6115@gmail.com',
+  age: '20',
+  department: 'Electronics and Instrumentation',
+  contact: '+91-__________',
+  gender: 'Female'
+}
+{
+  _id: ObjectId('685a2bdf4a57826d0fc9e509'),
+  name: 'Tanu',
+  email: 'tanushri@gmail.com',
+  age: '21',
+  department: 'Electronics and Instrumentation',
+  contact: '+91-__________',
+  gender: 'Female'
+}
+{
+  _id: ObjectId('685a40c74a57826d0fc9e50f'),
+  name: 'irhsunat',
+  email: 'tanushriv12345@gmail.com',
+  age: '23',
+  department: 'Electronics and Instrumentation',
+  contact: '+91-__________',
+  gender: 'Female'
+}
+{
+  _id: ObjectId('685a3fd64a57826d0fc9e50e'),
+  name: 'TANU',
+  email: 'tanushriv23@gmail.com',
+  age: '22',
+  department: 'Electronics and Instrumentation',
+  contact: '+91-__________',
+  gender: 'Female'
+}
+db.User.deleteOne({{gender: "Female"},{}})
+SyntaxError: Unexpected token (1:19)
+
+[0m[31m[1m>[22m[39m[90m 1 |[39m db[33m.[39m[33mUser[39m[33m.[39mdeleteOne({{gender[33m:[39m [32m"Female"[39m}[33m,[39m{}})
+ [90m   |[39m                    [31m[1m^[22m[39m
+ [90m 2 |[39m[0m
+db.User.deleteOne({gender: "Female"},{$set:{}})
+{
+  acknowledged: true,
+  deletedCount: 1
+}
+db.User.find()
+{
+  _id: ObjectId('685a2bdf4a57826d0fc9e509'),
+  name: 'Tanu',
+  email: 'tanushri@gmail.com',
+  age: '21',
+  department: 'Electronics and Instrumentation',
+  contact: '+91-__________',
+  gender: 'Female'
+}
+{
+  _id: ObjectId('685a3f854a57826d0fc9e50d'),
+  name: 'TANUSHRI',
+  email: 'tanushri123@gmail.com',
+  age: '22',
+  department: 'Electronics and Instrumentation',
+  contact: '+91-__________',
+  gender: 'Female'
+}
+{
+  _id: ObjectId('685a3fd64a57826d0fc9e50e'),
+  name: 'TANU',
+  email: 'tanushriv23@gmail.com',
+  age: '22',
+  department: 'Electronics and Instrumentation',
+  contact: '+91-__________',
+  gender: 'Female'
+}
+{
+  _id: ObjectId('685a40c74a57826d0fc9e50f'),
+  name: 'irhsunat',
+  email: 'tanushriv12345@gmail.com',
+  age: '23',
+  department: 'Electronics and Instrumentation',
+  contact: '+91-__________',
+  gender: 'Female'
+}
+db.User.insertMany([{
+name: "shritanu",
+email: "tanushri12345@gmail.com",
+age: "21",
+department: 'Electronics and Instrumentation',
+contact: '+91-__________',
+gender: 'Female'}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('685a43204a57826d0fc9e510')
+  }
+}
+db.User.find()
+{
+  _id: ObjectId('685a2bdf4a57826d0fc9e509'),
+  name: 'Tanu',
+  email: 'tanushri@gmail.com',
+  age: '21',
+  department: 'Electronics and Instrumentation',
+  contact: '+91-__________',
+  gender: 'Female'
+}
+{
+  _id: ObjectId('685a3f854a57826d0fc9e50d'),
+  name: 'TANUSHRI',
+  email: 'tanushri123@gmail.com',
+  age: '22',
+  department: 'Electronics and Instrumentation',
+  contact: '+91-__________',
+  gender: 'Female'
+}
+{
+  _id: ObjectId('685a3fd64a57826d0fc9e50e'),
+  name: 'TANU',
+  email: 'tanushriv23@gmail.com',
+  age: '22',
+  department: 'Electronics and Instrumentation',
+  contact: '+91-__________',
+  gender: 'Female'
+}
+{
+  _id: ObjectId('685a40c74a57826d0fc9e50f'),
+  name: 'irhsunat',
+  email: 'tanushriv12345@gmail.com',
+  age: '23',
+  department: 'Electronics and Instrumentation',
+  contact: '+91-__________',
+  gender: 'Female'
+}
+{
+  _id: ObjectId('685a43204a57826d0fc9e510'),
+  name: 'shritanu',
+  email: 'tanushri12345@gmail.com',
+  age: '21',
+  department: 'Electronics and Instrumentation',
+  contact: '+91-__________',
+  gender: 'Female'
+}
+db.User.find().sort({email:-1})
+{
+  _id: ObjectId('685a3fd64a57826d0fc9e50e'),
+  name: 'TANU',
+  email: 'tanushriv23@gmail.com',
+  age: '22',
+  department: 'Electronics and Instrumentation',
+  contact: '+91-__________',
+  gender: 'Female'
+}
+{
+  _id: ObjectId('685a40c74a57826d0fc9e50f'),
+  name: 'irhsunat',
+  email: 'tanushriv12345@gmail.com',
+  age: '23',
+  department: 'Electronics and Instrumentation',
+  contact: '+91-__________',
+  gender: 'Female'
+}
+{
+  _id: ObjectId('685a2bdf4a57826d0fc9e509'),
+  name: 'Tanu',
+  email: 'tanushri@gmail.com',
+  age: '21',
+  department: 'Electronics and Instrumentation',
+  contact: '+91-__________',
+  gender: 'Female'
+}
+{
+  _id: ObjectId('685a3f854a57826d0fc9e50d'),
+  name: 'TANUSHRI',
+  email: 'tanushri123@gmail.com',
+  age: '22',
+  department: 'Electronics and Instrumentation',
+  contact: '+91-__________',
+  gender: 'Female'
+}
+{
+  _id: ObjectId('685a43204a57826d0fc9e510'),
+  name: 'shritanu',
+  email: 'tanushri12345@gmail.com',
+  age: '21',
+  department: 'Electronics and Instrumentation',
+  contact: '+91-__________',
+  gender: 'Female'
+}
+db.User.updateOne({$unset: {email: "tanushri123@gmail.com"}})
+MongoInvalidArgumentError: Update document requires atomic operators
+db.User.updateOne({$unset: {email: ""}})
+MongoInvalidArgumentError: Update document requires atomic operators
+db.User.find()
+{
+  _id: ObjectId('685a2bdf4a57826d0fc9e509'),
+  name: 'Tanu',
+  email: 'tanushri@gmail.com',
+  age: '21',
+  department: 'Electronics and Instrumentation',
+  contact: '+91-__________',
+  gender: 'Female'
+}
+{
+  _id: ObjectId('685a3f854a57826d0fc9e50d'),
+  name: 'TANUSHRI',
+  email: 'tanushri123@gmail.com',
+  age: '22',
+  department: 'Electronics and Instrumentation',
+  contact: '+91-__________',
+  gender: 'Female'
+}
+{
+  _id: ObjectId('685a3fd64a57826d0fc9e50e'),
+  name: 'TANU',
+  email: 'tanushriv23@gmail.com',
+  age: '22',
+  department: 'Electronics and Instrumentation',
+  contact: '+91-__________',
+  gender: 'Female'
+}
+{
+  _id: ObjectId('685a40c74a57826d0fc9e50f'),
+  name: 'irhsunat',
+  email: 'tanushriv12345@gmail.com',
+  age: '23',
+  department: 'Electronics and Instrumentation',
+  contact: '+91-__________',
+  gender: 'Female'
+}
+{
+  _id: ObjectId('685a43204a57826d0fc9e510'),
+  name: 'shritanu',
+  email: 'tanushri12345@gmail.com',
+  age: '21',
+  department: 'Electronics and Instrumentation',
+  contact: '+91-__________',
+  gender: 'Female'
+}
+KEC
+Selection deleted
+
